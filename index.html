@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英語文法クイズアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>英語文法チャレンジ！</h1>
+
+        <div id="start-screen">
+            <h2>大学入試レベル英語クイズ</h2>
+            <p>動詞の語法、時制、助動詞からランダムに出題されます。</p>
+            <p>制限時間は60秒。正解で+10点、不正解で-5点。</p>
+            <button id="start-button">クイズ開始</button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div id="hud">
+                <div id="timer">時間: 60</div>
+                <div id="score">スコア: 0</div>
+            </div>
+            <div id="question-category">カテゴリ: </div>
+            <div id="question-text">ここに問題文が表示されます。</div>
+            <div id="choices-container">
+                <!-- 選択肢ボタンはJSで生成 -->
+            </div>
+            <div id="hint-area">
+                <button id="hint-button">ヒント (和訳)</button>
+                <p id="hint-text" class="hidden"></p> <!-- ヒント表示エリア -->
+            </div>
+            <div id="feedback"></div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2>結果発表</h2>
+            <p id="final-score">あなたのスコアは: 0 点でした。</p>
+            <p id="feedback-message"></p>
+            <button id="restart-button">もう一度挑戦する</button>
+            <div id="all-questions-review" class="hidden"> <!-- 全問題レビューエリア -->
+                <h3>出題された問題と解説</h3>
+                <div id="review-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
